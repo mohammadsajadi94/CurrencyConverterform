@@ -68,7 +68,7 @@ namespace CurrencyConverterform
                             resualtamount = amount * Convert.ToDouble(rates.Where(r => r.Item1 == "CAD" && r.Item2 == "GBP").Select(r => r.Item3).First());
                             break;
                         case "EUR":
-                            resualtamount = amount / Convert.ToDouble(rates.Where(r => r.Item1 == "USD" && r.Item2 == "EUR").Select(r => r.Item3).First());
+                            resualtamount = (amount / Convert.ToDouble(rates.Where(r => r.Item1 == "USD" && r.Item2 == "CAD").Select(r => r.Item3).First()))* Convert.ToDouble(rates.Where(r => r.Item1 == "USD" && r.Item2 == "EUR").Select(r => r.Item3).First());
                             break;
                     }
                     break;
